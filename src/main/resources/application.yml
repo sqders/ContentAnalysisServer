@@ -1,0 +1,14 @@
+app:
+  db:
+    server:
+      datasource:
+        class-driver: org.postgresql.Driver
+        username: postgres
+        password: 12345678
+        url: jdbc:postgresql://localhost:5432/extremism
+    text:
+      datasource:
+        class-driver: org.postgresql.Driver
+        username: EngineUser
+        password: Bstu31
+        url: jdbc:postgresql://localhost:5433/testDb

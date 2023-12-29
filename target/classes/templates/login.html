@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница авторизации</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Авторизация</h2>
+    <div th:if="${param.error}">
+        Invalid username and password.</div>
+    <div th:if="${param.logout}">
+        You have been logged out.</div>
+    <form method="post"
+          role="form"
+          th:action="@{/perform-login}"
+          th:object="${user}"
+    >
+        <input type="username" placeholder="Логин" name="username" id="username" th:field="*{username}">
+        <input type="password" placeholder="Пароль" name="password" id="password" th:field="*{password}">
+        <button type="submit">Войти</button>
+    </form>
+    <p>Нет аккаунта? <a th:href="@{/register}">Зарегистрируйтесь</a></p>
+</div>
+
+<script th:src="@{/static/js/login_script.js}"></script>
+</body>
+</html>
